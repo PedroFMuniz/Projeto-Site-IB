@@ -35,7 +35,7 @@
             </picture>
         </section>
         <section id="destaques">
-            <div class="slider" id="slider" onmousedown="clearInterval(intervalo)" onmouseup="var intervalo = setInterval(scrollSlider, 2500);">
+            <div class="slider" id="slider">
                 <div class="slide" id="slide-1">
                     <h3>Linha Basic</h3>
                     <picture>
@@ -122,13 +122,22 @@
 
         var cont = 0;
 
+        var verif = false;
+
+        const slider = document.getElementById("slider");
+
+        slider.addEventListener("touchstart", () => verif = true);
+        slider.addEventListener("touchend", () => verif = false);
+
         function scrollSlider(){
-            if(cont == 3){
-                document.getElementById("slider").scrollLeft += -(4*window.screen.width);
-                cont = 0;
-            }else{
-                document.getElementById("slider").scrollLeft += window.screen.width;
-                cont++;
+            if(!verif){
+                if(cont == 3){
+                    slider.scrollLeft += -(4*window.screen.width);
+                    cont = 0;
+                }else{
+                    slider.scrollLeft += window.screen.width;
+                    cont++;
+                }
             }
         };
 

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@font-face {
+    font-family: "Aaux";
+    src: url(../../../assets/fonts/AauxPro-Medium_0.ttf);
+}
+
+@font-face {
+    font-family: "Playlist";
+    src: url(../../../assets/fonts/Playlist\ Script.otf);
+}
+
+body{
+    background-color: #FFD1D8;
+}
+
+main{
+    padding: 35px 0px;
+}
+
+h1{
+    font: normal 3.5em Playlist, cursive;
+    color: #900351;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.336);
+    text-align: center;
+}
+
+p{
+    font: normal 1.2em Aaux, Arial, Helvetica, sans-serif;
+    color: rgb(12, 10, 10);
+    padding: 0px 35px;
+    line-height: 1.3em;
+    text-shadow: 0px 0px 1px black;
+    text-align: center;
+}
+
+section.regiao{
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section.regiao h2{
+    font: normal 2em Anton, Arial, Helvetica, sans-serif;
+    width: 40vw;
+    border-bottom: 7px solid #5a0232;
+}
+
+section.regiao ul{
+    list-style: none;
+    font: normal 1em Aaux, Arial, Helvetica, sans-serif;
+
+    border-left: 5px solid #900351;
+    padding-left: 10px;
+}
+
+section.regiao li{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+section.regiao a{
+    text-decoration: none;
+    color: #010101;
+}
+
+section.regiao address{
+    font: normal 1em Aaux, Arial, Helvetica, sans-serif;
+}

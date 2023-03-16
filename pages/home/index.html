@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irene Bellus</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/header_footer.css">
+</head>
+<body onresize="mudarMenu()">
+    <header>
+        <picture>
+            <img src="../../assets/images/logo-cel.png" alt="Logo Irene Bellus">
+        </picture>
+        <span class="material-icons md-36" onclick="mostrarMenu()">
+            menu
+        </span>
+        <menu id="menuPrincipal">
+            <img src="../../assets/images/icone-cel.png" alt="Ícone Irene Bellus">
+            <ul>
+                <li><a href="../../pages/home/index.html">Home</a></li>
+                <li><a href="../../pages/consulters/index.html">Consultoras</a></li>
+                <li><a href="../../pages/about/index.html">Sobre</a></li>
+                <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main onclick="esconderMenu()">
+        <section id="bannerPrincipal">
+            <picture>
+                <img src="../../assets/images/banner-cel.jpg" alt="">
+            </picture>
+        </section>
+        <section id="destaques">
+            <div class="slider" id="slider" onmouseenter="clearInterval(intervalo)" onmouseleave="var intervalo = setInterval(scrollSlider, 2500);">
+                <div class="slide" id="slide-1">
+                    <h3>Linha Basic</h3>
+                    <picture>
+                        <img src="../../assets/images/linha-basic-cel.jpg" alt="Linha Basic">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum vel consequuntur repellendus magni molestiae alias necessitatibus est quisquam sequi deleniti, voluptate, laudantium minus sed? Voluptatum quod totam porro a.</p>
+                    <a href="../catalog/index.html" class="botao">Confira!</a>
+                </div>
+                <div class="slide" id="slide-2">
+                    <h3>Linha Noite</h3>
+                    <picture>
+                        <img src="../../assets/images/linha-noite-cel.jpg" alt="Linha Noite">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto iure fugit quidem hic debitis inventore nam, neque iste nulla fugiat tenetur ad doloremque placeat reiciendis maiores, ipsam sint? Dolorum, recusandae!</p>
+                    <a href="../catalog/index.html" class="botao">Confira!</a>
+                </div>
+                <div class="slide" id="slide-3">
+                    <h3>Linha Noiva</h3>
+                    <picture>
+                        <img src="../../assets/images/linha-noiva-cel.jpg" alt="Linha Noiva">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure vel in eaque expedita delectus, ut assumenda architecto dolor, enim magnam quisquam rem. Reiciendis repellat nihil illo facere? Iure, adipisci nulla.</p>
+                    <a href="../catalog/index.html" class="botao">Confira!</a>
+                </div>
+                <div class="slide" id="slide-4">
+                    <h3>Linha Romance</h3>
+                    <picture>
+                        <img src="../../assets/images/linha-romance-cel.jpg" alt="Linha Romance">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eos sit saepe maiores dolor quis quaerat optio accusamus explicabo officia numquam rerum aliquam possimus, cupiditate sint recusandae ratione accusantium fugiat!</p>
+                    <a href="../catalog/index.html" class="botao">Confira!</a>
+                </div>
+            </div>
+        </section>
+        <section id="atendimento">
+            <img src="../../assets/images/consultoras.jpg" alt="Encontre uma consultora Irene Bellus">
+            <h2>Encontre a consultora mais próxima de você!</h2>
+            <p>Nossas consultoras estão prontas para atendê-la de forma personalizada e única!</p>
+            <a href="../consulters/index.html" class="botao">Encontre aqui!</a>
+            <h2 class="divisao">OU CHAMA NO WHATS!!!</h2>
+            <ul>
+                <li><span class="material-icons li">local_shipping</span>Entregamos em todo o Brasil</li>
+                <li><span class="material-icons li">autorenew</span>Troca garantida</li>
+                <li><span class="material-icons li">volunteer_activism</span>Atendimento personalizado</li>
+                <li><span class="material-icons li">payment</span>Parcelamento em 6x sem juros</li>
+            </ul>
+            <a href="#" class="botao" id="whatsapp">Chama a gente! <i class="fa fa-whatsapp"></i>
+            </a>
+        </section>
+        <section id="redes">
+            <h2 class="link">Siga nossas redes sociais</h2>
+            <div>
+                <a href="https://www.facebook.com/Irenesorocaba/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/irenebellus/"><i class="fa fa-instagram"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="../../assets/images/logo-footer.png" alt="Logo Irene Bellus">
+        <nav>
+            <ul>
+                <li><a href="../../pages/home/index.html">Home</a></li>
+                <li><a href="../../pages/consulters/index.html">Consultoras</a></li>
+                <li><a href="../../pages/about/index.html">Sobre</a></li>
+                <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
+            </ul>
+        </nav>
+        <div id="contato">
+            <h2 class="sessao">Contato</h2>
+            <ul>
+                <li><a href="">(15) 9 9695-8815 <i class="fa fa-whatsapp"></i></a></li>
+                <li>atendimento@irenebellus.com</li>
+            </ul>
+        </div>
+        <div id="endereco">
+            <h2 class="sessao">Nossa loja física</h2>
+            <address>R. João Pensa, 148 - Jardim das Flores, Sorocaba - SP 18071-778</address>
+        </div>
+    </footer>
+
+    <script>
+
+        var intervalo = setInterval(scrollSlider, 2500);
+
+        var cont = 0;
+
+        function scrollSlider(){
+            if(cont == 3){
+                document.getElementById("slider").scrollLeft += -(4*window.screen.width);
+                cont = 0;
+            }else{
+                document.getElementById("slider").scrollLeft += window.screen.width;
+                cont++;
+            }
+        };
+
+    </script>
+    <script src="../scripts/menu.js"></script>
+</body>
+</html>

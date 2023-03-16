@@ -29,8 +29,48 @@
         </menu>
     </header>
     <main onclick="esconderMenu()">
-        <h1>Em producao</h1>
-        <p>Retorne em outro momento</p>
+        <section id="apresentacao">
+            <h1>Catálogo</h1>
+            <h2>Descubra nossas linhas de produtos e encontre as peças que você adora!</h2>
+        </section>
+        <section class="linha">
+            <h3>Nome da Linha</h3>
+            <p>Subtitulo da Linha</p>
+            <div class="slider">
+                <span class="material-icons" onclick="prevSlide('--linha1')">chevron_left</span>
+                <div class="produtos" id="--linha1">
+                </div>
+                <span class="material-icons" onclick="nextSlide('--linha1')">chevron_right</span>
+            </div>
+            <a href="" class="botao">Confira!</a>
+        </section>
+        <section class="linha">
+            <h3>Nome da Linha</h3>
+            <p>Subtitulo da Linha</p>
+            <div class="slider">
+                <span class="material-icons" onclick="prevSlide('--linha2')">chevron_left</span>
+                <div class="produtos" id="--linha2">
+                </div>
+                <span class="material-icons" onclick="nextSlide('--linha2')">chevron_right</span>
+            </div>
+            <a href="" class="botao">Confira!</a>
+        </section>
+        <!-- <section class="linha">
+            <h3>Nome da Linha</h3>
+            <p>Subtitulo da Linha</p>
+            <div class="produtos" id="--linha3">
+
+            </div>
+            <a href="" class="botao">Confira!</a>
+        </section>
+        <section class="linha">
+            <h3>Nome da Linha</h3>
+            <p>Subtitulo da Linha</p>
+            <div class="produtos" id="--linha4">
+
+            </div>
+            <a href="" class="botao">Confira!</a>
+        </section> -->
     </main>
     <footer>
         <img src="../../assets/images/logo-footer.png" alt="Logo Irene Bellus">
@@ -55,5 +95,48 @@
         </div>
     </footer>
     <script src="../scripts/menu.js"></script>
+    <script>
+
+        const produtos = [
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha1" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha1" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha1" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha1" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha2" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha2" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha2" ,ref: 113},
+            {nome: "Produto Exemplo", img: "../../assets/images/example.jpg", linha: "--linha2" ,ref: 113},
+        ];
+
+        produtos.forEach(produto => {
+            const div = document.createElement("div");
+            div.setAttribute("class", "produto");
+            const a = document.createElement("a");
+
+            a.setAttribute("href", "#");
+            
+            const img = document.createElement("img");
+            img.setAttribute("src", produto.img);
+            const p = document.createElement("p");
+            p.innerHTML = produto.nome;
+
+            a.appendChild(img);
+            a.appendChild(p);
+            div.appendChild(a);
+
+            document.getElementById(produto.linha).appendChild(div);
+        });
+
+        function nextSlide(linha){
+            const line = document.getElementById(linha);
+            line.scrollLeft += window.innerWidth;
+        }
+
+        function prevSlide(linha){
+            const line = document.getElementById(linha);
+            line.scrollLeft -= window.innerWidth;
+        }
+
+    </script>
 </body>
 </html>

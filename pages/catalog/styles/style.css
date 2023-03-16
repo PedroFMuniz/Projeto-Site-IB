@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@font-face {
+    font-family: "Aaux";
+    src: url(../../../assets/fonts/AauxPro-Medium_0.ttf);
+}
+
+@font-face {
+    font-family: "Playlist";
+    src: url(../../../assets/fonts/Playlist\ Script.otf);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+
+    padding: 50px 0px;
+}
+
+section#apresentacao{
+    text-align: center;
+}
+
+section#apresentacao > h1{
+    font: normal 3.5em Playlist, cursive;
+    color: #900351;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.336);
+
+    margin-bottom: 15px;
+}
+
+section#apresentacao > h2{
+    font: normal 1.7em Anton, Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+section.linha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.linha > h3{
+    font: normal 1.5em Anton, Arial, Helvetica, sans-serif;
+}
+
+section.linha > p{
+    font: normal 1.2em Aaux, Arial, Helvetica, sans-serif;
+
+    margin-bottom: 30px;
+}
+
+div.slider{
+    width: 97vw;
+
+    display: flex;
+    align-items: center;
+}
+
+.material-icons{
+    font-size: 42px;
+}
+
+div.produtos{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    margin-bottom: 30px;
+
+}
+
+div.produtos::-webkit-scrollbar{
+    display: none;
+}
+
+div.produtos > div{
+    scroll-snap-align: start;
+}
+
+div.produto{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+div.produto a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    color: black;
+    text-decoration: none;
+}
+
+div.produto img{
+    width: 60%;
+}
+
+div.produto p{
+    font: normal 1.5em Aaux, Arial, Helvetica, sans-serif;
+    width: 60%;
+    text-align: center;
+}
+
+a.botao{
+    margin-top: 15px;
+    width: 65%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #900351;
+
+    gap: 10px;
+
+    font: 1.7em Aaux, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #F4DBDE;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.418);
+
+}

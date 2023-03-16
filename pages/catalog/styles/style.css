@@ -12,6 +12,10 @@
     src: url(../../../assets/fonts/Playlist\ Script.otf);
 }
 
+body{
+    background-color: #FFD1D8;
+}
+
 main{
     display: flex;
     flex-direction: column;

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irene Bellus</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/header_footer.css">
+</head>
+<body onresize="mudarMenu()">
+    <header>
+        <picture>
+            <img src="../../assets/images/logo-cel.png" alt="Logo Irene Bellus">
+        </picture>
+        <span class="material-icons md-36" onclick="mostrarMenu()">
+            menu
+        </span>
+        <menu id="menuPrincipal">
+            <img src="../../assets/images/icone-cel.png" alt="Ícone Irene Bellus">
+            <ul>
+                <li><a href="../../pages/home/index.html">Home</a></li>
+                <li><a href="../../pages/consulters/index.html">Consultoras</a></li>
+                <li><a href="../../pages/about/index.html">Sobre</a></li>
+                <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main onclick="esconderMenu()">
+        <section id="apresentacao">
+            <h1>Nossas Consultoras</h1>
+            <p>Encontre abaixo uma lista de nossas consultoras, encontre a mais próxima e entre em contato!</p>
+        </section>
+        <section id="norte" class="regiao">
+            <h2>Zona Norte</h2>
+        </section>
+        <section id="leste" class="regiao">
+            <h2>Zona Leste</h2>
+        </section>
+        <section id="sul" class="regiao">
+            <h2>Zona Sul</h2>
+        </section>
+        <section id="oeste" class="regiao">
+            <h2>Zona Oeste</h2>
+        </section>
+        <section id="votorantim" class="regiao">
+            <h2>Votorantim</h2>
+        </section>
+    </main>
+    <footer>
+        <img src="../../assets/images/logo-footer.png" alt="Logo Irene Bellus">
+        <nav>
+            <ul>
+                <li><a href="../../pages/home/index.html">Home</a></li>
+                <li><a href="../../pages/consulters/index.html">Consultoras</a></li>
+                <li><a href="../../pages/about/index.html">Sobre</a></li>
+                <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
+            </ul>
+        </nav>
+        <div id="contato">
+            <h2 class="sessao">Contato</h2>
+            <ul>
+                <li><a href="">(15) 9 9695-8815 <i class="fa fa-whatsapp"></i></a></li>
+                <li>atendimento@irenebellus.com</li>
+            </ul>
+        </div>
+        <div id="endereco">
+            <h2 class="sessao">Nossa loja física</h2>
+            <address>R. João Pensa, 148 - Jardim das Flores, Sorocaba - SP 18071-778</address>
+        </div>
+    </footer>
+    <script src="../scripts/menu.js"></script>
+    <script>
+        let consultoras = [
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "leste"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "oeste"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "sul"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "votorantim"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "votorantim"},
+        ];
+
+        consultoras.forEach((consultora) => {
+            let ul = document.createElement("ul");
+            let name = document.createElement("li");
+            name.className = "nomeConsultora";
+            name.innerHTML = consultora.nome;
+            ul.appendChild(name);
+            let tel = document.createElement("li");
+            let whats = document.createElement("a");
+            whats.setAttribute("href", consultora.whats);
+            whats.innerHTML = consultora.tel;
+            let iw = document.createElement("i");
+            iw.setAttribute("class", "fa fa-whatsapp");
+            tel.appendChild(whats);
+            tel.appendChild(iw);
+            ul.appendChild(tel);
+            let end = document.createElement("li");
+            let rua = document.createElement("address");
+            rua.innerHTML = consultora.endereco;
+            end.appendChild(rua);
+            ul.appendChild(end);
+
+            document.getElementById(consultora.regiao).appendChild(ul);
+        });
+
+    </script>
+</body>
+</html>

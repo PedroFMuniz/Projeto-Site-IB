@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="../styles/header_footer.css">
 </head>
-<body onresize="mudarMenu()">
+<body onresize="mudarMenu">
     <header>
         <picture>
             <img src="../../assets/images/logo-cel.png" alt="Logo Irene Bellus">
@@ -122,23 +122,26 @@
 
         var cont = 0;
 
-        var verif = false;
+        var isScrolling;
+
+        window.addEventListener('scroll', function ( event ) {
+            clearInterval(intervalo);
+            window.clearTimeout( isScrolling );
+            isScrolling = setTimeout(function() {
+                intervalo = setInterval(scrollSlider, 2500);
+            }, 66);
+        }, false);
 
         const slider = document.getElementById("slider");
 
-        slider.addEventListener("touchstart", () => verif = true);
-        slider.addEventListener("touchend", () => verif = false);
-
         function scrollSlider(){
-            if(!verif){
-                if(cont == 3){
-                    slider.scrollLeft += -(4*window.screen.width);
-                    cont = 0;
-                }else{
-                    slider.scrollLeft += window.screen.width;
-                    cont++;
-                }
-            }
+            if(cont == 3){
+                slider.scrollLeft += -(4*window.screen.width);
+                cont = 0;
+            }else{
+                slider.scrollLeft += window.screen.width;
+                cont++;
+            } 
         };
 
     </script>

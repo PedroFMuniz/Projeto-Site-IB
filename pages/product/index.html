@@ -29,48 +29,15 @@
         </menu>
     </header>
     <main onclick="esconderMenu()">
-        <section id="apresentacao">
-            <h1>Catálogo</h1>
-            <h2>Descubra nossas linhas de produtos e encontre as peças que você adora!</h2>
+        <section id="fotos">
+            <div id="auxiliares"></div>
+            <img src="" alt="Imagem principal" id="principal">
         </section>
-        <section class="linha">
-            <h3>Nome da Linha</h3>
-            <p>Subtitulo da Linha</p>
-            <div class="slider">
-                <span class="material-icons" onclick="prevSlide('--linha1')">chevron_left</span>
-                <div class="produtos" id="--linha1">
-                </div>
-                <span class="material-icons" onclick="nextSlide('--linha1')">chevron_right</span>
-            </div>
-            <a href="../line/index.html" class="botao" onclick="sessionStorage.setItem('linha', '--linha1')">Confira!</a>
+        <section id="informacoes">
+            <h1 id="titulo"></h1>
+            <h2 id="ref"></h2>
+            <p id="descricao"></p>
         </section>
-        <section class="linha">
-            <h3>Nome da Linha</h3>
-            <p>Subtitulo da Linha</p>
-            <div class="slider">
-                <span class="material-icons" onclick="prevSlide('--linha2')">chevron_left</span>
-                <div class="produtos" id="--linha2">
-                </div>
-                <span class="material-icons" onclick="nextSlide('--linha2')">chevron_right</span>
-            </div>
-            <a href="../line/index.html" class="botao" onclick="sessionStorage.setItem('linha', '--linha2')">Confira!</a>
-        </section>
-        <!-- <section class="linha">
-            <h3>Nome da Linha</h3>
-            <p>Subtitulo da Linha</p>
-            <div class="produtos" id="--linha3">
-
-            </div>
-            <a href="" class="botao">Confira!</a>
-        </section>
-        <section class="linha">
-            <h3>Nome da Linha</h3>
-            <p>Subtitulo da Linha</p>
-            <div class="produtos" id="--linha4">
-
-            </div>
-            <a href="" class="botao">Confira!</a>
-        </section> -->
     </main>
     <footer>
         <img src="../../assets/images/logo-footer.png" alt="Logo Irene Bellus">
@@ -96,7 +63,6 @@
     </footer>
     <script src="../scripts/menu.js"></script>
     <script>
-
         const produtos = [
         {nome: "Produto Exemplo 1", img:"../../assets/images/example.jpg", ref: "123", linha:"--linha1",auxiliares: ["../../assets/images/2.jpg", "../../assets/images/3.jpg", "../../assets/images/4.jpg", "../../assets/images/5.jpg"], descricao: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, laboriosam quos ratione iusto ipsum ipsam, id assumenda maxime praesentium voluptates similique libero necessitatibus ullam iure reiciendis consequuntur ducimus perspiciatis eos?"},
         {nome: "Produto Exemplo 2", img:"../../assets/images/example.jpg", ref: "124", linha:"--linha1",auxiliares: ["../../assets/images/2.jpg", "../../assets/images/3.jpg", "../../assets/images/4.jpg", "../../assets/images/5.jpg"], descricao: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, laboriosam quos ratione iusto ipsum ipsam, id assumenda maxime praesentium voluptates similique libero necessitatibus ullam iure reiciendis consequuntur ducimus perspiciatis eos?"},
@@ -110,34 +76,34 @@
         {nome: "Produto Exemplo 5", img:"../../assets/images/example.jpg", ref: "132", linha:"--linha2",auxiliares: ["../../assets/images/2.jpg", "../../assets/images/3.jpg", "../../assets/images/4.jpg", "../../assets/images/5.jpg"], descricao: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, laboriosam quos ratione iusto ipsum ipsam, id assumenda maxime praesentium voluptates similique libero necessitatibus ullam iure reiciendis consequuntur ducimus perspiciatis eos?"},
         ];
 
-        produtos.forEach(produto => {
-            const div = document.createElement("div");
-            div.setAttribute("class", "produto");
-            const a = document.createElement("a");
+        const produto = produtos.filter(produto => produto.ref == sessionStorage.getItem('ref'))[0];
 
-            a.setAttribute('href', '../product/index.html');
-            a.addEventListener('click', () => sessionStorage.setItem('ref', produto.ref));
-            
-            const img = document.createElement("img");
-            img.setAttribute("src", produto.img);
-            const p = document.createElement("p");
-            p.innerHTML = produto.nome;
+        const principal = document.getElementById('principal');
+        const auxiliares = document.getElementById('auxiliares');
+        const titulo = document.getElementById('titulo');
+        const ref = document.getElementById('ref');
+        const descricao = document.getElementById('descricao');
 
-            a.appendChild(img);
-            a.appendChild(p);
-            div.appendChild(a);
+        principal.setAttribute("src", produto.img);
 
-            document.getElementById(produto.linha).appendChild(div);
+        produto.auxiliares.forEach(img => {
+            const pic = document.createElement("img");
+            pic.setAttribute("src", img);
+            pic.addEventListener('click', () => mudarFoto(pic));
+            auxiliares.appendChild(pic);
         });
 
-        function nextSlide(linha){
-            const line = document.getElementById(linha);
-            line.scrollLeft += window.innerWidth;
-        }
+        titulo.innerHTML = produto.nome;
 
-        function prevSlide(linha){
-            const line = document.getElementById(linha);
-            line.scrollLeft -= window.innerWidth;
+        ref.innerHTML = "Ref: " + produto.ref;
+        
+        descricao.innerHTML = produto.descricao;
+
+
+        function mudarFoto(pic){
+            const temp = principal.getAttribute('src');
+            principal.setAttribute('src', pic.getAttribute('src'));
+            pic.setAttribute('src', temp);
         }
 
     </script>

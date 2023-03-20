@@ -30,12 +30,11 @@ section#destaques ::-webkit-scrollbar{
     display: none;
 }
 
-section#destaques > a{
+section#destaques > span{
     display: none;
 }
 
 section#destaques div.slider{
-    width: 100%;
     display: flex;
     overflow-x: auto;
 
@@ -70,6 +69,13 @@ div.slide img{
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.459);
 }
 
+div.infoDestaque{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
 div.slide h3{
     font: normal 3.5em Playlist, cursive;
     color: #900351;
@@ -93,11 +99,16 @@ section#atendimento{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
 
     text-align: center;
 
     padding: 15px 0px;
+}
+
+section#atendimento div#consultoras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section#atendimento img{

@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@font-face {
+    font-family: "Aaux";
+    src: url(../../../assets/fonts/AauxPro-Medium_0.ttf);
+}
+
+@font-face {
+    font-family: "Playlist";
+    src: url(../../../assets/fonts/Playlist\ Script.otf);
+}
+
+@font-face {
+    font-family: "Playlist-caps";
+    src: url(../../../assets/fonts/Playlist\ Caps.otf);
+}
+
+@media screen and (min-width: 920px){
+    main{
+        flex-direction: row;
+
+        padding: 50px 50px;
+    }
+
+    section#fotos{
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        gap: 10px;
+
+        width: 57%;
+    }
+
+    img#principal{
+        width: 85%;
+    }
+
+    div#auxiliares{
+        flex-direction: column;
+        justify-content: start;
+
+        gap: 5px;
+
+        width: 15%;
+    }
+
+    div#auxiliares img{
+        width: 100%;
+        cursor: pointer;
+
+        transition: .3s;
+    }
+
+    div#auxiliares img:hover{
+        margin: -10px 10px 10px -10px;
+    }
+
+    section#informacoes{
+        width: 75%;
+        
+        align-self: start;
+    }
+
+    section#informacoes h1{
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    section#informacoes p{
+        padding-right: 225px;
+    }
+}

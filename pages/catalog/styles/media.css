@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@font-face {
+    font-family: "Aaux";
+    src: url(../../../assets/fonts/AauxPro-Medium_0.ttf);
+}
+
+@font-face {
+    font-family: "Playlist";
+    src: url(../../../assets/fonts/Playlist\ Script.otf);
+}
+
+@font-face {
+    font-family: "Playlist-caps";
+    src: url(../../../assets/fonts/Playlist\ Caps.otf);
+}
+
+@media screen and (min-width: 920px){
+    .material-icons{
+        font-size: 5em;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    section.linha{
+        width: 80%;
+    }
+
+    div.slider{
+        width: 100%;
+    }
+
+    div.produto{
+        width: 33.3%;
+    }
+}

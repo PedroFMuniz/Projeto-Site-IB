@@ -12,7 +12,6 @@ header{
     position: sticky;
     top: 0;
     background-color: #F4DBDE;
-    width: 100vw;
     height: 13vh;
     padding: 50px 10px;
     display: flex;
@@ -118,4 +117,103 @@ footer div li, address{
 footer a{
     text-decoration: none;
     color: whitesmoke;
+}
+
+@media screen and (min-width: 920px){
+
+    header{
+        position: static;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: transparent;
+
+        margin: 20px 0px;
+        padding: 0px 32px;
+
+        box-shadow: none;
+    }
+
+    header span.material-icons.md-36{
+        display: none;
+    }
+
+    menu{
+        position: static;
+        width: fit-content;
+        height: 100%;
+        background-color: transparent;
+
+        margin: 0;
+        padding: 0;
+
+
+        display: flex;
+        flex-direction: row;
+
+        box-shadow: none;
+    }
+
+    menu img{
+        display: none;
+    }
+
+    menu ul{
+        display: flex;
+        gap: 30px;
+        align-self: flex-end;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    menu li{
+        margin: 0;
+        padding: 0;
+        transition: .3s;
+    }
+
+    menu li:hover{
+        border-bottom: 5px solid #900351;
+        transform: translateY(-7px);
+    }
+
+    main{
+        background-color: #f5e7e9;
+    }
+
+    footer{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer img{
+        width: 20%;
+    }
+
+    footer nav{
+        font-size: 2em;
+        justify-self: center;
+    }
+
+    footer nav li{
+        margin: 10px 0px;
+    }
+
+    div#info{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        gap: 30px;
+    }
+
+    div#info li, address{
+        font-size: 1.3em;
+    }
+
+    body{
+        background-color: #FFD1D8;
+    }
+
 }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="../styles/header_footer.css">
+    <link rel="stylesheet" href="styles/media.css">
 </head>
 <body onresize="mudarMenu()">
     <header>
@@ -82,6 +83,7 @@
                 <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
             </ul>
         </nav>
+    <div id="info">
         <div id="contato">
             <h2 class="sessao">Contato</h2>
             <ul>
@@ -93,7 +95,8 @@
             <h2 class="sessao">Nossa loja física</h2>
             <address>R. João Pensa, 148 - Jardim das Flores, Sorocaba - SP 18071-778</address>
         </div>
-    </footer>
+    </div>
+</footer>
     <script src="../scripts/menu.js"></script>
     <script>
 
@@ -132,12 +135,12 @@
 
         function nextSlide(linha){
             const line = document.getElementById(linha);
-            line.scrollLeft += window.innerWidth;
+            line.scrollLeft += 700;
         }
 
         function prevSlide(linha){
             const line = document.getElementById(linha);
-            line.scrollLeft -= window.innerWidth;
+            line.scrollLeft -= 700;
         }
 
     </script>

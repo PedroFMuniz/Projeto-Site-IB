@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="../styles/header_footer.css">
+    <link rel="stylesheet" href="styles/media.css">
 </head>
 <body onresize="mudarMenu()">
     <header>
@@ -33,21 +34,32 @@
             <h1>Nossas Consultoras</h1>
             <p>Encontre abaixo uma lista de nossas consultoras, encontre a mais próxima e entre em contato!</p>
         </section>
-        <section id="norte" class="regiao">
-            <h2>Zona Norte</h2>
-        </section>
-        <section id="leste" class="regiao">
-            <h2>Zona Leste</h2>
-        </section>
-        <section id="sul" class="regiao">
-            <h2>Zona Sul</h2>
-        </section>
-        <section id="oeste" class="regiao">
-            <h2>Zona Oeste</h2>
-        </section>
-        <section id="votorantim" class="regiao">
-            <h2>Votorantim</h2>
-        </section>
+        <div id="regioes">
+            <div id="regiao1">
+                <section id="norte" class="regiao">
+                    <h2>Zona Norte</h2>
+                </section>
+                <section id="leste" class="regiao">
+                    <h2>Zona Leste</h2>
+                </section>
+            </div>
+            <div id="regiao2">
+                <section id="sul" class="regiao">
+                    <h2>Zona Sul</h2>
+                </section>
+                <section id="oeste" class="regiao">
+                    <h2>Zona Oeste</h2>
+                </section>
+            </div>
+            <div id="regiao3">
+                <section id="votorantim" class="regiao">
+                    <h2>Votorantim</h2>
+                </section>
+                <section id="sao-roque" class="regiao">
+                    <h2>São Roque</h2>
+                </section>
+            </div>
+        </div>
     </main>
     <footer>
         <img src="../../assets/images/logo-footer.png" alt="Logo Irene Bellus">
@@ -59,6 +71,7 @@
                 <li><a href="../../pages/catalog/index.html">Catálogo</a></li>
             </ul>
         </nav>
+    <div id="info">
         <div id="contato">
             <h2 class="sessao">Contato</h2>
             <ul>
@@ -70,10 +83,15 @@
             <h2 class="sessao">Nossa loja física</h2>
             <address>R. João Pensa, 148 - Jardim das Flores, Sorocaba - SP 18071-778</address>
         </div>
-    </footer>
+    </div>
+</footer>
     <script src="../scripts/menu.js"></script>
     <script>
         let consultoras = [
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
+            {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
             {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "norte"},
             {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "leste"},
             {nome: "Pedro Ferreira Muniz", tel: "9 9801-5731", endereco: "Rua Victor Carone, 23 - Jd. das Flores", whats: "link", regiao: "oeste"},

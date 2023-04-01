@@ -36,7 +36,7 @@
                 <img src="../../assets/images/banner-cel.jpg" alt="">
             </picture>
         </section>
-        <section id="destaques" onmouseover="clearInterval(intervalo)" onmouseout="intervalo = setInterval(scrollSlider, 5000)">
+        <section id="destaques">
             <span class="material-icons" onclick="prevSlide()">chevron_left</span>
             <div class="slider" id="slider">
                 <div class="slide" id="slide-1">
@@ -159,6 +159,7 @@
         };
 
         function prevSlide(){
+            clearInterval(intervalo);
             intervalo = setInterval(scrollSlider, 5000);
             if(cont == 0){
                 slider.scrollLeft += 4*window.screen.width;
@@ -170,6 +171,7 @@
         }
 
         function nextSlide(){
+            clearInterval(intervalo);
             intervalo = setInterval(scrollSlider, 5000);
             if(cont == 4){
                 slider.scrollLeft += -(4*window.screen.width);
